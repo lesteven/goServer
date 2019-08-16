@@ -14,6 +14,7 @@ func main() {
     mux := http.NewServeMux()
 
     mux.HandleFunc("/", handler)
+    mux.HandleFunc("/data", Data);
 
     fileServer := http.FileServer(http.Dir("./ui/"))
 
