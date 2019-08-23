@@ -14,9 +14,11 @@ type Person struct {
     Image string `json:"image"`
 }
 
-func Home(w http.ResponseWriter, r *http.Request) {
-    w.Header().Set("Access-Control-Allow-Origin","*")
-    goRes.SendJson(w, 200, data)
+func HomeWithFlag(origin *string) http.HandlerFunc {
+    return func(w http.ResponseWriter, r *http.Request) {
+        w.Header().Set("Access-Control-Allow-Origin", *origin)
+        goRes.SendJson(w, 200, data)
+    }
 }
 
 var url = "localhost:8080/static/"
