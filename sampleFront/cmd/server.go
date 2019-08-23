@@ -11,7 +11,7 @@ func main() {
     mux := http.NewServeMux()
 
     mux.HandleFunc("/", Home)
-    fileServer := http.FileServer(http.Dir("../ui/static/"))
+    fileServer := http.FileServer(http.Dir("../ui/static"))
     mux.Handle("/static/", http.StripPrefix("/static", fileServer))
 
     // default is :3000
