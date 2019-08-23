@@ -21,7 +21,7 @@ func HomeWithFlag(origin *string) http.HandlerFunc {
     }
 }
 
-var url = "localhost:8080/static/"
+var url = "http://localhost:8080/static/"
 var data = []Person{
     Person{"Steven", "Le", "Developer", "Oakland",
         "steven@example.com", url + "man1.svg"},
