@@ -32,6 +32,7 @@ const inSearch = (data, searchVal) => {
 const filter = (data) => (e) => {
   const searchVal = e.target.value.trim();
   const list = document.querySelector(".list");
+
   // prevent filtering when searchVal is empty
   if (searchVal == "" && data.length == list.children.length) {
     return;
